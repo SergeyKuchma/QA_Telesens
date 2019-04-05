@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--Конфигурация для testNG фреймворка-->
+<suite name="Cross Browser  Suite">
+    <test name="Login Tests Chrome">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.academy.rozetka.AuthTests" />
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.academy</groupId>
+    <artifactId>java-part</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <!--Версия jdk-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--Кодировка-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <common.config>${basedir}/src/main/resources/common.properties</common.config>
+        <automationpractice.config>${basedir}/src/main/resources/automationpractice.properties</automationpractice.config>
+
+
+        <poi.ooxml.version>4.0.1</poi.ooxml.version>
+        <log4j.version>2.11.1</log4j.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.academy</groupId>
+            <artifactId>taf</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.ooxml.version}</version>
+        </dependency>
+
+        <!--MySql connector-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.12</version>
+        </dependency>
+
+        <!--Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+        <!--TestNG-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.0.0-beta3</version>
+        </dependency>
+        <!--Logger -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <systemProperties>
+                        <property>
+                            <name>common.cfg</name>
+                            <value>${common.config}</value>
+                            <!--<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>-->
+                            <!--<value>${basedir}/src/main/resources/common.properties</value>-->
+                        </property>
+                        <property>
+                            <name>automationpractice.cfg</name>
+                            <value>${automationpractice.config}</value>
+                        </property>
+                    </systemProperties>
+
+                    <!--Путь к конфигурации testng.xml-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>suites/testng-rozetka.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

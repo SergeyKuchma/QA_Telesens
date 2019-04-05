@@ -1,0 +1,5 @@
+[Subscriber{id=1, firstName='Иван', lastName='Васильев', gender=м, age=23, phoneNumber='380630025465', operator=Life}
+, Subscriber{id=2, firstName='Катя', lastName='Петрова', gender=ж, age=34, phoneNumber='380670058694', operator=Kievstar}
+, Subscriber{id=33, firstName='Николай', lastName='Поликарпов', gender=м, age=32, phoneNumber='380630025999', operator=Life}
+, Subscriber{id=24, firstName='Илона', lastName='Сидорова', gender=ж, age=41, phoneNumber='380670058111', operator=Kievstar}
+]
