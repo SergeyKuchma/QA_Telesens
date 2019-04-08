@@ -6,7 +6,7 @@
     <test name="Login Tests Chrome">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.academy.rozetka.AuthTests" />
+            <class name="com.academy.rozetka.FilterTests_v2" />
         </classes>
     </test>
 </suite>

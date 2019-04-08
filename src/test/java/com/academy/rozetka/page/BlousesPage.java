@@ -20,6 +20,7 @@ public class BlousesPage extends BasePage {
     @FindBy(xpath= submitButtonLinkLocator)
     private WebElement submitButtonLink;
 
+
     //вводим минимальное значение
     public BlousesPage enterMinPrice (String minPrice) {
         enterText(minPriceLink, minPrice);

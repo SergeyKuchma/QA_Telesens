@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.academy</groupId>
-    <artifactId>java-part</artifactId>
+    <artifactId>javapart</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <!--Версия jdk-->
@@ -23,6 +23,7 @@
     </properties>
 
     <dependencies>
+        <!-- Framework -->
         <dependency>
             <groupId>com.academy</groupId>
             <artifactId>taf</artifactId>
