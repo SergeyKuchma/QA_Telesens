@@ -55,8 +55,9 @@ public class FilterTests_v2 extends BaseTest {
 
 
         //запись всех цен со страницы в массив (всего 60 элементов на странице
+       //это надо преобразовать через метод получения всех элементов
         String priceList[] = new String[61];
-        Integer countOfIncorrectPrice=0; //счетчик цен, не попадающих в диапазон
+        int countOfIncorrectPrice=0; //счетчик цен, не попадающих в диапазон
         for (int i=1;i<=60;i++) {
             priceList[i] = driver.findElement(By.xpath("/html/body/app-root/div/div[1]/div[3]/div[1]/main/div[2]/section/app-goods/ul/li["+i+"]/app-goods-tile/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]")).getText();
             if(Integer.parseInt(priceList[i])<200 | Integer.parseInt(priceList[i])>500) {
@@ -64,7 +65,7 @@ public class FilterTests_v2 extends BaseTest {
                 countOfIncorrectPrice++;
             }
         }
-       // Assert.assertEquals(countOfIncorrectPrice,"0");
+       Assert.assertEquals(countOfIncorrectPrice,0);
 
         if(countOfIncorrectPrice==0) System.out.println("Все цены в заданном диапазоне");
     }

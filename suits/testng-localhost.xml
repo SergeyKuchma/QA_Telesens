@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <!--Конфигурация для testNG фреймворка-->
-<suite name="Cross Browser  Suite">
-    <test name="Login Tests Chrome">
+<suite name="Localhost Suite">
+    <test name="Localhost Tests Chrome">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.academy.rozetka.FilterTests_v2" />
+            <class name="com.academy.localhost.TestGet" /> <!--com.academy.localhost.LocalhostUITests-->
         </classes>
     </test>
 </suite>

@@ -20,6 +20,10 @@ public class BlousesPage extends BasePage {
     @FindBy(xpath= submitButtonLinkLocator)
     private WebElement submitButtonLink;
 
+    private final String allPricesLinkLocator = "/html/body/app-root/div/div[1]/div[3]/div[1]/main/div[2]/section/app-goods/ul/li/app-goods-tile/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]";
+    @FindBy(xpath= allPricesLinkLocator)
+    private WebElement allPricesLink;
+
 
     //вводим минимальное значение
     public BlousesPage enterMinPrice (String minPrice) {

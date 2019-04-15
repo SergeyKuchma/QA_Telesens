@@ -7,6 +7,7 @@
     <groupId>com.academy</groupId>
     <artifactId>javapart</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <!--Версия jdk-->
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -16,9 +17,11 @@
 
         <common.config>${basedir}/src/main/resources/common.properties</common.config>
         <automationpractice.config>${basedir}/src/main/resources/automationpractice.properties</automationpractice.config>
-
+        <rozetka.config>${basedir}/src/main/resources/rozetka.properties</rozetka.config>
 
         <poi.ooxml.version>4.0.1</poi.ooxml.version>
+        <selenium.version>3.14.0</selenium.version>
+        <testng.version>7.0.0-beta3</testng.version>
         <log4j.version>2.11.1</log4j.version>
     </properties>
 
@@ -29,7 +32,7 @@
             <artifactId>taf</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <!--Excel-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -43,19 +46,20 @@
             <version>8.0.12</version>
         </dependency>
 
-        <!--Selenium -->
+        <!--Selenium-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.12.0</version>
+            <version>${selenium.version}</version>
         </dependency>
 
         <!--TestNG-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.0.0-beta3</version>
+            <version>${testng.version}</version>
         </dependency>
+
         <!--Logger -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -68,6 +72,26 @@
             <version>${log4j.version}</version>
         </dependency>
 
+        <!--xstream - библиотека для xml -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
+
+        <!--json - библиотека для json -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+
+        <!--Rest-Assured - библиотека для тестирования RESTful API-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -88,11 +112,18 @@
                             <name>automationpractice.cfg</name>
                             <value>${automationpractice.config}</value>
                         </property>
-                    </systemProperties>
 
+                        <property>
+                            <name>rozetka.cfg</name>
+                            <value>${rozetka.config}</value>
+                            <!--<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>-->
+                            <!--<value>${basedir}/src/main/resources/common.properties</value>-->
+                        </property>
+
+                    </systemProperties>
                     <!--Путь к конфигурации testng.xml-->
                     <suiteXmlFiles>
-                        <suiteXmlFile>suites/testng-rozetka.xml</suiteXmlFile>
+                        <suiteXmlFile>suits/testng-localhost.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

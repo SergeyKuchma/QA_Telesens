@@ -1,0 +1,21 @@
+// НЕТ метода equalTo("1")
+
+package com.academy.localhost;
+
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.given;
+import static java.net.URI.equal;
+
+public class TestGetDsl {
+    @Test
+    public void testGetDsl() {
+        given().log().all()
+            .when().get("/subscribers/{id}", 1)
+            .then().assertThat()
+        //    .body("subscriber.id", equal("1")) //equalTo("1")
+        //    .body("subscriber.firstName", equals("Иван")) // equalTo("Иван")
+            .and().statusCode(200);
+}
+
+}
